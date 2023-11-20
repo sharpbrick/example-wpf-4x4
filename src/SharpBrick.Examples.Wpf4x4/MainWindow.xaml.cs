@@ -82,7 +82,7 @@ namespace SharpBrick.Examples.Wpf4x4
             await _hub.ConnectAsync();
             SetupProgress = 3;
 
-            _motor = (await _hub.CreateVirtualPortAsync(0, 1)).GetDevice<TechnicXLargeLinearMotor>();
+            _motor = (await _hub.CreateVirtualPortAsync(_hub.B.PortId, _hub.D.PortId)).GetDevice<TechnicXLargeLinearMotor>();
             _steeringMotor = _hub.C.GetDevice<TechnicLargeLinearMotor>();
             SetupProgress = 4;
 
